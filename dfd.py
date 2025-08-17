@@ -3,7 +3,7 @@ from openai import OpenAI
 from typing import List, Dict, Optional
 import json
 import os
-from dotenv import load_dotenv
+# from dotenv import load_dotenv
 
 # load_dotenv(override=True)
 # client = OpenAI(api_key=os.getenv('OPENAI_API_KEY'))
