@@ -1,0 +1,316 @@
+/* Hebrew RTL Styles for Streamlit Application */
+
+/* Import Hebrew fonts */
+@import url('https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;500;600;700&family=Heebo:wght@300;400;500;600;700&display=swap');
+
+/* RTL support for Hebrew text */
+.rtl {
+    direction: rtl;
+    text-align: right;
+    font-family: 'Assistant', 'Heebo', Arial, sans-serif;
+}
+
+/* Main container RTL */
+.main .block-container {
+    direction: rtl;
+    text-align: right;
+}
+
+/* Streamlit elements RTL */
+.stTitle, .stHeader, .stSubheader {
+    direction: rtl;
+    text-align: center !important; /* Center the main title */
+    font-family: 'Assistant', 'Heebo', Arial, sans-serif;
+}
+
+/* Specific styling for main title */
+h1 {
+    text-align: center !important;
+    direction: rtl;
+    font-family: 'Assistant', 'Heebo', Arial, sans-serif !important;
+    margin: 0 auto;
+    display: block;
+}
+
+/* Center the title container */
+.main .block-container h1 {
+    text-align: center !important;
+    width: 100%;
+}
+
+/* Override any RTL alignment for titles specifically */
+.stTitle {
+    text-align: center !important;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Chat messages RTL */
+.stChatMessage {
+    direction: rtl;
+    text-align: right;
+}
+
+.stChatMessage .stMarkdown {
+    direction: rtl;
+    text-align: right;
+    font-family: 'Assistant', 'Heebo', Arial, sans-serif;
+}
+
+/* Chat input RTL - Multiple selectors to ensure it works */
+.stChatInput > div > div > textarea,
+.stChatInput textarea,
+[data-testid="stChatInput"] > div > div > textarea,
+[data-testid="stChatInput"] textarea {
+    direction: rtl !important;
+    text-align: right !important;
+    font-family: 'Assistant', 'Heebo', Arial, sans-serif !important;
+}
+
+/* Chat input container RTL */
+.stChatInput,
+[data-testid="stChatInput"] {
+    direction: rtl;
+}
+
+/* Chat input wrapper RTL */
+.stChatInput > div,
+[data-testid="stChatInput"] > div {
+    direction: rtl;
+    text-align: right;
+}
+
+/* Additional chat input selectors for newer Streamlit versions */
+.st-emotion-cache-1c7y2kd textarea,
+.st-emotion-cache-1ec6rqw textarea {
+    direction: rtl !important;
+    text-align: right !important;
+    font-family: 'Assistant', 'Heebo', Arial, sans-serif !important;
+}
+
+/* Sidebar RTL */
+.css-1d391kg {
+    direction: rtl;
+    text-align: right;
+}
+
+/* Buttons RTL */
+.stButton > button {
+    font-family: 'Assistant', 'Heebo', Arial, sans-serif;
+    direction: rtl;
+}
+
+/* Success/Info/Error messages RTL - Enhanced selectors */
+.stSuccess, .stInfo, .stError, .stWarning,
+[data-testid="stSuccess"], [data-testid="stInfo"], 
+[data-testid="stError"], [data-testid="stWarning"] {
+    direction: rtl !important;
+    text-align: right !important;
+}
+
+.stSuccess .stMarkdown, .stInfo .stMarkdown, 
+.stError .stMarkdown, .stWarning .stMarkdown,
+[data-testid="stSuccess"] .stMarkdown, [data-testid="stInfo"] .stMarkdown,
+[data-testid="stError"] .stMarkdown, [data-testid="stWarning"] .stMarkdown {
+    direction: rtl !important;
+    text-align: right !important;
+    font-family: 'Assistant', 'Heebo', Arial, sans-serif !important;
+}
+
+/* Alert containers RTL */
+.stAlert, [data-testid="stAlert"] {
+    direction: rtl !important;
+    text-align: right !important;
+}
+
+/* Alert content RTL */
+.stAlert > div, [data-testid="stAlert"] > div {
+    direction: rtl !important;
+    text-align: right !important;
+    font-family: 'Assistant', 'Heebo', Arial, sans-serif !important;
+}
+
+/* Success alert specific styling */
+.stSuccess > div, [data-testid="stSuccess"] > div {
+    direction: rtl !important;
+    text-align: right !important;
+}
+
+/* Emotion cache classes for alerts */
+.st-emotion-cache-1wmy9hl, .st-emotion-cache-16idsys {
+    direction: rtl !important;
+    text-align: right !important;
+    font-family: 'Assistant', 'Heebo', Arial, sans-serif !important;
+}
+
+/* All alert text content */
+.stSuccess *, .stInfo *, .stError *, .stWarning *,
+[data-testid="stSuccess"] *, [data-testid="stInfo"] *,
+[data-testid="stError"] *, [data-testid="stWarning"] * {
+    direction: rtl !important;
+    text-align: right !important;
+    font-family: 'Assistant', 'Heebo', Arial, sans-serif !important;
+}
+
+/* Spinner RTL */
+.stSpinner > div {
+    direction: rtl;
+    text-align: right;
+}
+
+/* Markdown content RTL */
+.stMarkdown {
+    direction: rtl;
+    text-align: right;
+    font-family: 'Assistant', 'Heebo', Arial, sans-serif;
+}
+
+/* Fix for English/number elements that should remain LTR */
+.ltr {
+    direction: ltr;
+    text-align: left;
+}
+
+/* Additional Hebrew typography improvements */
+.rtl h1, .rtl h2, .rtl h3, .rtl h4, .rtl h5, .rtl h6 {
+    font-family: 'Assistant', 'Heebo', Arial, sans-serif;
+    font-weight: 600;
+}
+
+.rtl p, .rtl div, .rtl span {
+    font-family: 'Assistant', 'Heebo', Arial, sans-serif;
+    line-height: 1.6;
+}
+
+/* Chat specific styling */
+.stChatMessage[data-testid="chat-message-user"] {
+    background-color: #f0f2f6;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 5px 0;
+}
+
+.stChatMessage[data-testid="chat-message-assistant"] {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 5px 0;
+}
+
+/* Sidebar Hebrew styling */
+.css-1d391kg .stMarkdown {
+    direction: rtl;
+    text-align: right;
+    font-family: 'Assistant', 'Heebo', Arial, sans-serif;
+}
+
+/* Form elements RTL */
+.stTextInput > div > div > input {
+    direction: rtl;
+    text-align: right;
+    font-family: 'Assistant', 'Heebo', Arial, sans-serif;
+}
+
+.stTextArea > div > div > textarea {
+    direction: rtl;
+    text-align: right;
+    font-family: 'Assistant', 'Heebo', Arial, sans-serif;
+}
+
+/* Select box RTL */
+.stSelectbox > div > div > select {
+    direction: rtl;
+    text-align: right;
+    font-family: 'Assistant', 'Heebo', Arial, sans-serif;
+}
+
+/* Radio button RTL */
+.stRadio > div {
+    direction: rtl;
+    text-align: right;
+}
+
+.stRadio label {
+    font-family: 'Assistant', 'Heebo', Arial, sans-serif;
+}
+
+/* Checkbox RTL */
+.stCheckbox > div {
+    direction: rtl;
+    text-align: right;
+}
+
+.stCheckbox label {
+    font-family: 'Assistant', 'Heebo', Arial, sans-serif;
+}
+
+/* Metrics RTL */
+.stMetric {
+    direction: rtl;
+    text-align: right;
+}
+
+.stMetric .metric-label {
+    font-family: 'Assistant', 'Heebo', Arial, sans-serif;
+}
+
+/* Expander RTL */
+.streamlit-expanderHeader {
+    direction: rtl;
+    text-align: right;
+    font-family: 'Assistant', 'Heebo', Arial, sans-serif;
+}
+
+/* Tabs RTL */
+.stTabs [data-baseweb="tab-list"] {
+    direction: rtl;
+}
+
+.stTabs [data-baseweb="tab"] {
+    font-family: 'Assistant', 'Heebo', Arial, sans-serif;
+}
+
+/* Progress bar RTL */
+.stProgress {
+    direction: rtl;
+}
+
+/* Slider RTL */
+.stSlider {
+    direction: rtl;
+}
+
+/* File uploader RTL */
+.stFileUploader {
+    direction: rtl;
+    text-align: right;
+}
+
+.stFileUploader label {
+    font-family: 'Assistant', 'Heebo', Arial, sans-serif;
+}
+
+/* Date input RTL */
+.stDateInput {
+    direction: rtl;
+    text-align: right;
+}
+
+/* Time input RTL */
+.stTimeInput {
+    direction: rtl;
+    text-align: right;
+}
+
+/* Number input RTL */
+.stNumberInput {
+    direction: rtl;
+    text-align: right;
+}
+
+/* Color picker RTL */
+.stColorPicker {
+    direction: rtl;
+    text-align: right;
+}
