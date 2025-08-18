@@ -3,11 +3,16 @@ from openai import OpenAI
 from typing import List, Dict, Optional
 import json
 import os
-# from dotenv import load_dotenv
 
-# load_dotenv(override=True)
-# client = OpenAI(api_key=os.getenv('OPENAI_API_KEY'))
-client = OpenAI(api_key=st.secrets["OPENAI_API_KEY"])
+def is_streamlit_cloud():
+    return os.environ.get("STREAMLIT_RUNTIME") == "cloud"
+
+if is_streamlit_cloud():
+    client = OpenAI(api_key=st.secrets["OPENAI_API_KEY"])
+else:
+    from dotenv import load_dotenv
+    load_dotenv(override=True)
+    client = OpenAI(api_key=os.getenv('OPENAI_API_KEY'))
 
 # Categories for appointment triage
 APPOINTMENT_CATEGORIES = {
@@ -58,7 +63,7 @@ def call_openai_api(messages: List[Dict[str, str]]) -> Optional[str]:
     """Call OpenAI API with error handling"""
     try:
         response = client.chat.completions.create(
-            model="gpt-4",
+            model= "gpt-4.1-2025-04-14", #"gpt-4",
             messages=[{"role": "system", "content": SYSTEM_PROMPT}] + messages,
             max_tokens=500,
             temperature=0.7
