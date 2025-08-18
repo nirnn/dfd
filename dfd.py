@@ -11,7 +11,7 @@ if is_streamlit_cloud():
     client = OpenAI(api_key=st.secrets["OPENAI_API_KEY"])
 else:
     # from dotenv import load_dotenv
-    load_dotenv(override=True)
+    # load_dotenv(override=True)
     client = OpenAI(api_key=os.getenv('OPENAI_API_KEY'))
 
 # Categories for appointment triage
